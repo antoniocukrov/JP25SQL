@@ -1,8 +1,10 @@
 drop database if exists edunovajp25;
 create database edunovajp25 character set utf8;
-# otvoriti cmd i zaljepiti od znaka # do kraja - pripaziti na putanju
-# c:\xampp\mysql\bin\mysql -uedunova -pedunova --default_character_set=utf8 < c:\skriptajp25.sql
 use edunovajp25;
+
+# otvoriti cmd i zaljepiti od znaka # do kraja - pripaziti na putanju
+# c:\xampp\mysql\bin\mysql -uedunova -pedunova --default_character_set=utf8 < "C:\Users\Lord Pupcent\Documents\GitHub\JP25SQL\skriptajp25.sql"
+
 
 create table smjer(
     sifra int not null primary key auto_increment,
