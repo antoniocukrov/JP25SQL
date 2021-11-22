@@ -1,5 +1,5 @@
 drop database if exists githubucenje;
-create database if exists githubucenje character set utf8;
+create database githubucenje character set utf8;
 use githubucenje;
 
 create table git(
