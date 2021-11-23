@@ -13,7 +13,8 @@ create table osoba(
 create table zivotinja(
     sifra int not null primary key auto_increment,
     ime varchar(50) not null,
-    prostor int not null
+    prostor int not null,
+    osoba int not null
 );
 
 create table prostor(
@@ -22,15 +23,10 @@ create table prostor(
     bojazidova varchar(50) null
 );
 
-create table sticenik(
-    osoba int,
-    zivotinja int
-);
-
-alter table sticenik add foreign key (osoba) references osoba(sifra);
-alter table sticenik add foreign key (zivotinja) references zivotinja(sifra);
 
 alter table zivotinja add foreign key (prostor) references prostor(sifra);
+
+alter table zivotinja add foreign key (osoba) references osoba(sifra);
 
 insert into prostor(sifra,ime,bojazidova) values 
 (null, 'Prostorija A', 'Plava'),
@@ -44,7 +40,7 @@ insert into osoba(sifra,ime,placa) values
 (null, 'Josip', 4700);
 
 insert into zivotinja(sifra,ime,prostor) values
-(null, 'Crypto', 1),
-(null, 'Penny', 2),
-(null, 'Aron', 3);
+(null, 'Crypto', 1,3),
+(null, 'Penny', 2,3),
+(null, 'Aron', 3,1);
 
