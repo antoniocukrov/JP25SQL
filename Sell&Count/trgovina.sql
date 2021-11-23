@@ -39,5 +39,13 @@ create table JM(
 
 create table primka_artikl(
     primka int not null,
-    proizvod int not null
+    artikl int not null
 );
+
+alter table artikl add foreign key (JM) references JM(sifra);
+alter table artikl add foreign key (klasifikacija) references klasifikacija(sifra);
+
+alter table primka add foreign key (djelatnik) references djelatnik(sifra);
+
+alter table primka_artikl add foreign key (primka) references primka(sifra);
+alter table primka_artikl add foreign key (artikl) references artikl(sifra);
