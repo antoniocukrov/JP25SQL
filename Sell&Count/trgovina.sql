@@ -7,15 +7,13 @@ use trgovina;
 create table artikl(
     sifra int not null primary key auto_increment,
     naziv varchar(50) not null,
-    EANkod int not null,
-    cijena decimal(18.2),
-    zaliha decimal(18.2) not null,
-    klasifikacija int null,
+    EANkod varchar(50) not null,
+    cijena decimal(18.2),    
     JM int not null,
-    blagajnik int null
+    klasifikacija int null
 );
 
-create table blagajnik(
+create table djelatnik(
     sifra int not null primary key auto_increment,
     naziv varchar(50) not null,
     lozinka varchar(50) not null
@@ -23,11 +21,9 @@ create table blagajnik(
 
 create table primka(
     sifra int not null primary key auto_increment,
-    artikl int not null,
-    kolicina decimal(18.2) not null,
-    vrijeme datetime null,
-    dobavljac int not null,
-    blagajnik int not null
+    djelatnik int not null,
+    brojotpremnice varchar(50) not null,
+    dobavljač varchar(50) null
 );
 
 
@@ -41,4 +37,7 @@ create table JM(
     naziv varchar(50) not null
 );
 
-
+create table primka_artikl(
+    primka int not null,
+    proizvod int not null
+);
