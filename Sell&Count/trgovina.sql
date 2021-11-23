@@ -15,13 +15,6 @@ create table artikl(
     blagajnik int null
 );
 
-create table prodaja(
-    sifra int not null primary key auto_increment,
-    racun int not null,
-    artikl int not null,
-    kolicina decimal(18.2) not null,
-    cijena decimal(18.2) null
-);
 
 create table blagajnik(
     sifra int not null primary key auto_increment,
@@ -29,14 +22,7 @@ create table blagajnik(
     lozinka varchar(50) not null
 );
 
-create table racun(
-    sifra int not null primary key auto_increment,
-    kupac int not null,
-    cijena decimal(18.2) not null,
-    tipplacanja varchar(50) null,
-    vrijeme datetime null,
-    blagajnik int null
-);
+
 
 create table primka(
     sifra int not null primary key auto_increment,
@@ -47,28 +33,6 @@ create table primka(
     blagajnik int not null
 );
 
-create table narudzba(
-    sifra int not null primary key auto_increment,
-    artikl int not null,
-    kolicina decimal(18.2) not null,
-    cijena decimal(18.2) not null,
-    vrijeme datetime not null
-
-);
-
-create table kupac(
-    sifra int not null primary key auto_increment,
-    oib varchar(11) not null,
-    naziv varchar(50) not null,
-    brojtelefona varchar(50) null
-);
-
-create table dobavljac(
-    sifra int not null primary key auto_increment,
-    oib varchar(11) not null,
-    naziv varchar(50) not null,
-    email varchar(50)
-);
 
 create table klasifikacija(
     sifra int not null primary key auto_increment,
@@ -80,37 +44,15 @@ create table JM(
     naziv varchar(50) not null
 );
 
-create table ima(
-    dobavljac int,
-    narudzba int
-);
-
-create table odraduje(
-    blagajnik int,
-    narudzba int
-);
 
 alter table artikl add foreign key (klasifikacija) references klasifikacija(sifra);
 alter table artikl add foreign key (JM) references JM(sifra);
 alter table artikl add foreign key (blagajnik) references blagajnik(sifra);
 
-alter table prodaja add foreign key (racun) references racun(sifra);
-alter table prodaja add foreign key (artikl) references artikl(sifra);
-
-alter table racun add foreign key (kupac) references kupac(sifra);
-alter table racun add foreign key (blagajnik) references blagajnik(sifra);
-
 alter table primka add foreign key (artikl) references artikl(sifra);
 alter table primka add foreign key (dobavljac) references dobavljac(sifra);
 alter table primka add foreign key (blagajnik) references blagajnik(sifra);
 
-alter table narudzba add foreign key (artikl) references artikl(sifra);
-
-alter table ima add foreign key (dobavljac) references dobavljac(sifra);
-alter table ima add foreign key (narudzba) references narudzba(sifra);
-
-alter table odraduje add foreign key (blagajnik) references blagajnik(sifra);
-alter table odraduje add foreign key (narudzba) references narudzba(sifra);
 
 #insert u JM
 
