@@ -15,14 +15,11 @@ create table artikl(
     blagajnik int null
 );
 
-
 create table blagajnik(
     sifra int not null primary key auto_increment,
     naziv varchar(50) not null,
     lozinka varchar(50) not null
 );
-
-
 
 create table primka(
     sifra int not null primary key auto_increment,
@@ -43,23 +40,5 @@ create table JM(
     sifra int not null primary key auto_increment,
     naziv varchar(50) not null
 );
-
-
-alter table artikl add foreign key (klasifikacija) references klasifikacija(sifra);
-alter table artikl add foreign key (JM) references JM(sifra);
-alter table artikl add foreign key (blagajnik) references blagajnik(sifra);
-
-alter table primka add foreign key (artikl) references artikl(sifra);
-alter table primka add foreign key (dobavljac) references dobavljac(sifra);
-alter table primka add foreign key (blagajnik) references blagajnik(sifra);
-
-
-#insert u JM
-
-insert into JM(sifra,naziv) values
-(null,'kg'),
-(null,'L'),
-(null,'KOM'),
-(null,'m2');
 
 
