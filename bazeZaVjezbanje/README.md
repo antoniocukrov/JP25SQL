@@ -14,9 +14,10 @@
 
 ## Baza "world":earth_africa:
 ##### Odaberite sve zemlje iz Europe:
-
+        select * from country where Continent='Europe';
 ##### Unesite mjesto Donji Miholjac:
-
+        insert into city(ID,Name,CountryCode,District,Population) values (null, 'Donji Miholjac', 'HRV', 'Osjecko-baranjska', 9491);
 ##### Promjenite Donji Miholjac u Špičkovinu:
-
+        update city set name='Špickovina' where ID=4080;
 ##### Obrišite mjesto Špičkovina:
+        delete from city where ID=4080;
