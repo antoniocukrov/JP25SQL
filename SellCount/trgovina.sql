@@ -2,7 +2,7 @@ drop database if exists trgovina;
 create database trgovina character set utf8;
 use trgovina;
 
-#c:\xampp\mysql\bin\mysql -uedunova -pedunova --default_character_set=utf8 < "C:\Users\Lord Pupcent\Documents\GitHub\JP25SQL\Sell&Count\trgovina.sql"
+#c:\xampp\mysql\bin\mysql -uedunova -pedunova --default_character_set=utf8 < "C:\Users\Lord Pupcent\Documents\GitHub\JP25SQL\SellCount\trgovina.sql"
 
 create table artikl(
     sifra int not null primary key auto_increment,
