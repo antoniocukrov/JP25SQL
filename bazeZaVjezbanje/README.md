@@ -1,4 +1,4 @@
-# Homework no.1: Učitati sve baze :bomb:
+# Homework no.1: :bomb:
 
 ### Baza "knjiznica":books:
 ###### Odaberite sve autore za koje ne znamo datum rođenja:
@@ -28,10 +28,15 @@
 ###### Izvucite sve nazive knjiga koje su izdali ne aktivni izdavači
         select a.naslov from katalog a inner join izdavac b on a.izdavac=b.sifra;
 ###### Izvucite sve autore koji u svojim naslovima knjiga nemaju slovo B
-
+        select distinct b.ime,b.prezime from katalog a inner join autor b on a.autor=b.sifra where naslov not like '%b%';
 ###### Izvucite sve aktivne izdavače koji su izdali knjige u Zagrebu
+        select a.sifra,a.naziv
+        from katalog b inner join izdavac a on a.sifra = b.izdavac 
+        inner join mjesto c on b.mjesto = c.sifra 
+        where c.naziv='Zagreb' and a.aktivan=1;
 
 
 
 ### Baza "sakila" :heavy_dollar_sign:
 ###### Izvucite sve nazive zemalja čiji gradovi nemaju definiranu adresu 
+        
