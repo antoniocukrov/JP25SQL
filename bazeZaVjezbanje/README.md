@@ -39,4 +39,8 @@
 
 ### Baza "sakila" :heavy_dollar_sign:
 ###### Izvucite sve nazive zemalja čiji gradovi nemaju definiranu adresu 
+        select distinct b.country 
+        from city a inner join country b on a.country_id = b.country_id
+        inner join address c on c.city_id = a.city_id
+        where c.address2 is null;
         

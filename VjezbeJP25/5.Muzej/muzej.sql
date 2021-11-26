@@ -3,7 +3,7 @@ create database muzej character set utf8;
 use muzej;
 
 # otvoriti cmd i zaljepiti od znaka # do kraja - pripaziti na putanju
-# c:\xampp\mysql\bin\mysql -uedunova -pedunova --default_character_set=utf8 < c:\muzej.sql
+# c:\xampp\mysql\bin\mysql -uedunova -pedunova --default_character_set=utf8 < "C:\Users\Lord Pupcent\Documents\GitHub\JP25SQL\VjezbeJP25\5.Muzej\muzej.sql"
 
 create table izlozba (
     sifra int not null primary key auto_increment,
@@ -29,7 +29,6 @@ create table djelo (
     sifra int not null primary key auto_increment,
     ime varchar(50),
     umjetnik varchar(50),
-    izlozba int,
     starost int
 );
 

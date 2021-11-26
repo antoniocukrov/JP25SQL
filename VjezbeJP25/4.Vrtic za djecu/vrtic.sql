@@ -3,7 +3,7 @@ create database vrtic character set utf8;
 use vrtic;
 
 # otvoriti cmd i zaljepiti od znaka # do kraja - pripaziti na putanju
-# c:\xampp\mysql\bin\mysql -uedunova -pedunova --default_character_set=utf8 < c:\vrtic.sql
+# c:\xampp\mysql\bin\mysql -uedunova -pedunova --default_character_set=utf8 < "C:\Users\Lord Pupcent\Documents\GitHub\JP25SQL\VjezbeJP25\4.Vrtic za djecu\vrtic.sql"
 
 create table skupina(
    sifra int not null primary key auto_increment,
@@ -15,6 +15,7 @@ create table skupina(
 create table dijete(
     sifra int not null primary key auto_increment,
     ime varchar(50),
+    prezime varchar(50),
     starost int
 );
 
