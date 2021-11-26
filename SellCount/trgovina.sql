@@ -15,7 +15,8 @@ create table artikl(
 
 create table djelatnik(
     sifra int not null primary key auto_increment,
-    naziv varchar(50) not null,
+    ime varchar(50) not null,
+    prezime varchar(50) not null,
     lozinka varchar(50) not null
 );
 
@@ -23,7 +24,7 @@ create table primka(
     sifra int not null primary key auto_increment,
     djelatnik int not null,
     brojotpremnice varchar(50) not null,
-    dobavljač varchar(50) null
+    dobavljac varchar(50) null
 );
 
 
