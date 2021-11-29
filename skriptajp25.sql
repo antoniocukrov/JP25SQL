@@ -1,17 +1,15 @@
 drop database if exists edunovajp25;
 create database edunovajp25 character set utf8;
-use edunovajp25;
-
 # otvoriti cmd i zaljepiti od znaka # do kraja - pripaziti na putanju
-# c:\xampp\mysql\bin\mysql -uedunova -pedunova --default_character_set=utf8 < "C:\Users\Lord Pupcent\Documents\GitHub\JP25SQL\skriptajp25.sql"
-
+# # c:\xampp\mysql\bin\mysql -uedunova -pedunova --default_character_set=utf8 < "C:\Users\Lord Pupcent\Documents\GitHub\JP25SQL\skriptajp25.sql"
 
 create table smjer(
     sifra int not null primary key auto_increment,
     naziv varchar(50) not null,
     trajanje int not null,
     cijena decimal(18,2),
-    certificiran boolean
+    certificiran boolean,
+    vrijemeunosa datetime not null default now()
 );
 
 create table osoba(
@@ -61,7 +59,7 @@ alter table clan add foreign key (polaznik) references polaznik(sifra);
 
 # Loš način
 # 1
-insert into smjer values (null,'Java programiranje',130,5999.99,true);
+insert into smjer values (null,'Java programiranje',130,5999.99,true,now());
 
 # Malo bolji način
 # 2
@@ -167,3 +165,24 @@ insert into clan (grupa,polaznik) values
 (1,21),
 (1,22),
 (1,23);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
