@@ -112,3 +112,5 @@ insert into prijatelj_brat(prijatelj,brat) values
 # select majica from ostavljena where lipa!=9 and lipa!=10 and lipa!=20 and lipa!=30 and lipa!=35;
 
 # select a.ekstroventno,f.vesta,e.kuna from brat a inner join prijatelj_brat b on b.brat=a.sifra inner join prijatelj c on b.prijatelj=c.sifra inner join ostavljena d on d.prijatelj=c.sifra inner join snasa e on e.ostavljena =d.sifra inner join punica f on f.snasa = e.sifra where d.lipa!=91 and c.haljina like '%ba%' order by 3 desc;
+
+#select a.haljina,a.lipa from prijatelj a inner join prijatelj_brat b on b.prijatelj=a.sifra where a.sifra not in (select prijatelj from prijatelj_brat where prijatelj is not null);
