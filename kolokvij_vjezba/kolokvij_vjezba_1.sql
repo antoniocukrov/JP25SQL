@@ -70,8 +70,8 @@ sifra int not null primary key auto_increment,
 suknja varchar(50) not null,
 kuna decimal(16, 8) not null,
 drugiputa datetime null,
-asocijalno bit null,
-ekstroventno bit not null,
+asocijalno boolean null,
+ekstroventno boolean not null,
 dukserica varchar(48) not null,
 muskarac int null
 );
@@ -116,4 +116,8 @@ insert into sestra_svekar(sestra,svekar) values
 
 # delete from mladic where kuna>15.78;
 
-# select zena.kratkamajica where zena.hlace like '%ana%';
+# select kratkamajica from zena where hlace like '%ana%';
+
+# select f.dukserica,a.asocijalno,b.hlace from mladic a inner join muskarac b on a.muskarac=b.sifra inner join zena c on b.zena=c.sifra inner join sestra d on c.sestra=d.sifra inner join sestra_svekar e on e.sestra=d.sifra inner join svekar f on e.svekar=f.sifra where c.hlace like 'a%' and d.haljina like '%ba%' order by 3 desc;
+
+# select a.haljina,a.maraka from sestra a inner join sestra_svekar b on b.sestra=a.sifra where a.sifra not in (b.sestra);
