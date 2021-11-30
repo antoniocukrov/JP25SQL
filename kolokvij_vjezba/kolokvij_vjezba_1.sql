@@ -120,4 +120,4 @@ insert into sestra_svekar(sestra,svekar) values
 
 # select f.dukserica,a.asocijalno,b.hlace from mladic a inner join muskarac b on a.muskarac=b.sifra inner join zena c on b.zena=c.sifra inner join sestra d on c.sestra=d.sifra inner join sestra_svekar e on e.sestra=d.sifra inner join svekar f on e.svekar=f.sifra where c.hlace like 'a%' and d.haljina like '%ba%' order by 3 desc;
 
-# select a.haljina,a.maraka from sestra a inner join sestra_svekar b on b.sestra=a.sifra where a.sifra not in (b.sestra);
+# select a.haljina,a.maraka from sestra a inner join sestra_svekar b on b.sestra=a.sifra where a.sifra not in (select sestra from sestra_svekar where sestra is not null);
