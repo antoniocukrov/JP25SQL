@@ -104,3 +104,15 @@ insert into decko_zarucnica(decko,zarucnica) values
 (1,1),
 (2,2),
 (3,3);
+
+# select * from decko_zarucnica;
+
+# update prijatelj set treciputa=2020-04-30;
+
+# delete from brat where ogrlica!=14;
+
+# select suknja from cura where drugiputa is null;
+
+# select a.novcica,f.neprijatelj ,e.haljina from zarucnica a inner join decko_zarucnica b on b.zarucnica=a.sifra inner join decko c on b.decko=c.sifra inner join cura d on d.decko=c.sifra inner join neprijatelj e on e.cura=d.sifra inner join brat f on f.neprijatelj=e.sifra where d.drugiputa not in (select d.drugiputa is not null) and c.vesta like '%ba%' order by 3 desc;
+
+# select a.vesta,a.asocijalno from decko a inner join decko_zarucnica b on b.decko=a.sifra where a.sifra not in (select decko from decko_zarucnica where decko is not null);
