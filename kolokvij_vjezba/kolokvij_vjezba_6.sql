@@ -110,3 +110,4 @@ insert into prijatelj_ostavljena(prijatelj,ostavljena) values
 
 #select narukvica from brat where treciputa is not null;
 
+#select a.drugiputa, f.zena , e.narukvica from ostavljena a inner join prijatelj_ostavljena b on b.ostavljena=a.sifra inner join prijatelj c on b.prijatelj=c.sifra inner join brat d on d.prijatelj=c.sifra inner join zena e on e.brat=d.sifra inner join decko f on f.zena=e.sifra where d.treciputa not in(select treciputa from brat where treciputa is not null) and c.prstena=219 order by 3 desc;
