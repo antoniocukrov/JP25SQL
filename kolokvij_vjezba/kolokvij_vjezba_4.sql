@@ -96,10 +96,16 @@ insert into mladic(vesta) values
 ('Plava'),
 ('Ona iz New Yorkera');
 
-insert into zena_mladic() values
+insert into zena_mladic(zena,mladic) values
 (1,1),
 (2,2),
 (3,3);
+
+#update punac set majica='Osijek';
+
+#delete from prijatelj where prstena>17;
+
+#select haljina from snasa where treciputa is null;
 
 
 
