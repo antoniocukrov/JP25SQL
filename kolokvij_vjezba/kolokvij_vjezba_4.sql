@@ -68,5 +68,14 @@ becar int not null
 );
 
 
+alter table punac add foreign key (ostavljen) references ostavljen(sifra);
+
+alter table zena_mladic add foreign key (mladic) references mladic(sifra);
+alter table zena_mladic add foreign key (zena) references zena(sifra);
+alter table snasa add foreign key (zena) references zena(sifra);
+alter table becar add foreign key (snasa) references snasa(sifra);
+alter table prijatelj add foreign key (becar) references becar(sifra);
+
+
 
 
