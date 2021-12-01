@@ -109,3 +109,5 @@ insert into svekar_cura(svekar,cura) values
 # select majica from punac where prviputa is not null;
 
 # select a.asocijalno,f.stilfrizura,e.nausnica from cura a inner join svekar_cura b on b.cura=a.sifra inner join svekar c on b.svekar=c.sifra inner join punac d on d.svekar=c.sifra inner join punica e on e.punac=d.sifra inner join ostavljena f on f.punica=e.sifra where d.prviputa not in(select prviputa from punac where prviputa is not null) and c.majica like '%ba%' order by 3 desc;
+
+# select a.majica,a.carape from svekar a inner join svekar_cura b on b.svekar=a.sifra where a.sifra not in(select cura from svekar_cura where cura is not null);
