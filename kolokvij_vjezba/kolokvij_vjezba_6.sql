@@ -103,3 +103,10 @@ insert into prijatelj_ostavljena(prijatelj,ostavljena) values
 (1,1),
 (2,2),
 (3,3);
+
+#update svekrva set suknja='Osijek';
+
+#delete from decko where modelnaocala<20;
+
+#select narukvica from brat where treciputa is not null;
+
