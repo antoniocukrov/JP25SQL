@@ -109,6 +109,8 @@ insert into zena_mladic(zena,mladic) values
 
 #select a.nausnica,f.jmbag, e.kratkamajica from mladic a inner join zena_mladic b on b.mladic=a.sifra inner join zena c on c.sifra=b.zena inner join snasa d on d.zena=c.sifra inner join becar e on e.snasa= d.sifra inner join prijatelj f on f.becar=e.sifra where d.treciputa not in (select treciputa from snasa where treciputa is not null) and c.lipa!=29 order by 3 desc;
 
+#select a.lipa,a.prstena from zena a inner join zena_mladic b on b.zena=a.sifra where a.sifra not in(select zena from zena_mladic where zena is not null);
+
 
 
 
