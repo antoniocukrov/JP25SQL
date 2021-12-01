@@ -101,3 +101,9 @@ insert into svekar_cura(svekar,cura) values
 (1,1),
 (2,2),
 (3,3);
+
+# update mladic set haljina='Osijek';
+
+# delete from ostavljena where ogrlica=17;
+
+# select majica from punac where prviputa is not null;
