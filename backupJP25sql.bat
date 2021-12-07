@@ -8,8 +8,8 @@ if "%HOUR:~0,1%" == " " (SET dtStamp=%dtStamp9%) else (SET dtStamp=%dtStamp24%)
 
 set naziv=itbackup%dtStamp%.sql
 
-c:\xampp\mysql\bin\mysqldump -uedunova -pedunova edunovajp25 > Dropbox:\%naziv%
+c:\xampp\mysql\bin\mysqldump -uedunova -pedunova edunovajp25 > C:\%naziv%
 
-"C:\Program Files\7-Zip\7z.exe" a -tzip  Dropbox\%naziv%.zip d:\%naziv%
-del d:\%naziv%
+"C:\Program Files\7-Zip\7z.exe" a -tzip  "C:\Users\Lord Pupcent\Dropbox\%naziv%.zip" C:\%naziv%
+del C:\%naziv%
 ECHO "GOTOV"
