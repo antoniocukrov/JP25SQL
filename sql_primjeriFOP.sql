@@ -44,7 +44,7 @@ begin
 	return concat(ime,prezime,'@edunova.hr');
 	
 end;
-$$
+$$ 
 delimiter ;
 
 

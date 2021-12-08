@@ -49,3 +49,17 @@ create table zarucnica (
 );
 
 alter table muskarac add foreign key (neprijateljica) references neprijateljica(id);
+
+delimiter $$
+create function zadatak1(
+begin
+	SELECT OrderID, Quantity,
+CASE
+    WHEN Quantity > 5098 THEN "The quantity is greater than 5098"
+    WHEN Quantity < 980 THEN "The quantity is less than 980"
+    ELSE "The quantity is under 30"
+END
+FROM OrderDetails;	
+end;
+$$
+delimiter ;
